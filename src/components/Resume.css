@@ -24,3 +24,10 @@
   border-radius: 6px;
   font-weight: bold;
 }
+@media (max-width: 600px) {
+  .resume-btn {
+    width: 80%;
+    display: inline-block;
+    font-size: 1rem;
+  }
+}

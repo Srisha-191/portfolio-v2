@@ -5,7 +5,8 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Resume from './components/Resume'; 
-
+import ScrollToTop from './components/ScrollToTop';
+import './App.css';
 function App() {
   return (
     <div>
@@ -16,6 +17,7 @@ function App() {
       <Projects />
       <Contact />
       <Resume />
+      <ScrollToTop />
     </div>
   );
 }

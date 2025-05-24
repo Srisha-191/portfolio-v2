@@ -27,3 +27,14 @@
   border-radius: 20px;
   font-weight: 500;
 }
+@media (max-width: 768px) {
+  .skill-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-item {
+    width: 80%;
+    text-align: center;
+  }
+}
