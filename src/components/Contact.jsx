@@ -1,51 +1,40 @@
-import React, { useState } from 'react';
-import './Contact.css';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
-const Contact = () => {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+function Contact() {
+  const form = useRef();
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    alert("Thank you! Your message has been submitted.");
-    // You can replace alert with email sending logic later
-    setForm({ name: '', email: '', message: '' });
+
+    emailjs.sendForm(
+      'srishashanmugam808@gmail',
+      'template_qdt23u9',
+      form.current,
+      'ZXpWVCS5eYLJDW2ya'
+    ).then(
+      (result) => {
+        alert('Message sent!');
+        console.log(result.text);
+      },
+      (error) => {
+        alert('Failed to send message.');
+        console.log(error.text);
+      }
+    );
   };
 
   return (
-    <section id="contact" className="contact">
+    <div className="contact-form">
       <h2>Contact Me</h2>
-      <form onSubmit={handleSubmit} className="contact-form">
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          placeholder="Your Name"
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          placeholder="Your Email"
-          onChange={handleChange}
-          required
-        />
-        <textarea
-          name="message"
-          value={form.message}
-          placeholder="Your Message"
-          onChange={handleChange}
-          required
-        ></textarea>
-        <button type="submit">Send Message</button>
+      <form ref={form} onSubmit={sendEmail}>
+        <input type="text" name="user_name" placeholder="Your Name" required />
+        <input type="email" name="user_email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
       </form>
-    </section>
+    </div>
   );
-};
+}
 
 export default Contact;
