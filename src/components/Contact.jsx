@@ -18,6 +18,11 @@ const Contact = () => {
   return (
     <section id="contact" className="contact">
       <h2>Contact Me</h2>
+    
+      <p>You can also reach me directly at: 
+      <a href="mailto:srishashanmugam808@gmail.com">srishashanmugam808@gmail.com</a>
+      </p>
+
       <form onSubmit={handleSubmit} className="contact-form">
         <input
           type="text"
