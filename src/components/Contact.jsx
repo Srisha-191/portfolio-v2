@@ -11,17 +11,17 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Thank you! Your message has been submitted.");
-  
     setForm({ name: '', email: '', message: '' });
   };
 
   return (
     <section id="contact" className="contact">
-      <h2>Contact Me</h2>
+      <h2 className="section-title">Contact Me</h2>
+
       <p>
-  You can also reach me directly at:
-  <a href="mailto:srishashanmugam808@gmail.com">srishashanmugam808@gmail.com</a>
-</p>
+        You can also reach me directly at:
+        <a href="mailto:srishashanmugam808@gmail.com"> srishashanmugam808@gmail.com</a>
+      </p>
 
       <form onSubmit={handleSubmit} className="contact-form">
         <input
@@ -46,12 +46,8 @@ const Contact = () => {
           placeholder="Your Message"
           onChange={handleChange}
           required
-        >
-
-        </textarea>
-      
-        <button type="submit">
-          Send Message</button>
+        />
+        <button type="submit">Send Message</button>
       </form>
     </section>
   );

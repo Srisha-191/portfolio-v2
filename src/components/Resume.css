@@ -31,3 +31,33 @@
     font-size: 1rem;
   }
 }
+.resume {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.resume-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: #005fa3;
+}
+
+/* Dark mode support */
+.dark-mode .resume-btn {
+  background-color: #00ccff;
+  color: black;
+}
+
+.dark-mode .resume-btn:hover {
+  background-color: #009ecc;
+}
