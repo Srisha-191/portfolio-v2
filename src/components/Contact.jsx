@@ -1,37 +1,27 @@
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useState } from 'react';
+import './Contact.css';
 
-function Contact() {
-  const form = useRef();
+const Contact = () => {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
 
-  const sendEmail = (e) => {
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    emailjs.sendForm(
-      'srishashanmugam808@gmail',
-      'template_qdt23u9',
-      form.current,
-      'ZXpWVCS5eYLJDW2ya'
-    ).then(
-      (result) => {
-        alert('Message sent!');
-        console.log(result.text);
-      },
-      (error) => {
-        alert('Failed to send message.');
-        console.log(error.text);
-      }
-    );
+    alert("Thank you! Your message has been submitted.");
+  
+    setForm({ name: '', email: '', message: '' });
   };
 
   return (
-    <div className="contact-form">
+    <section id="contact" className="contact">
       <h2>Contact Me</h2>
-<<<<<<< HEAD
-    
-      <p>You can also reach me directly at: 
-      <a href="mailto:srishashanmugam808@gmail.com">srishashanmugam808@gmail.com</a>
-      </p>
+      <p>
+  You can also reach me directly at:
+  <a href="mailto:srishashanmugam808@gmail.com">srishashanmugam808@gmail.com</a>
+</p>
 
       <form onSubmit={handleSubmit} className="contact-form">
         <input
@@ -56,18 +46,15 @@ function Contact() {
           placeholder="Your Message"
           onChange={handleChange}
           required
-        ></textarea>
-        <button type="submit">Send Message</button>
-=======
-      <form ref={form} onSubmit={sendEmail}>
-        <input type="text" name="user_name" placeholder="Your Name" required />
-        <input type="email" name="user_email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
->>>>>>> 5babef09d89ceb2e6c2c1f0995fd6f0f4bf64f55
+        >
+
+        </textarea>
+      
+        <button type="submit">
+          Send Message</button>
       </form>
-    </div>
+    </section>
   );
-}
+};
 
 export default Contact;

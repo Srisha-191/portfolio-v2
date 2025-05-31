@@ -38,3 +38,40 @@
     text-align: center;
   }
 }
+.skills {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.skills-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 20px;
+}
+
+.skill-item {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 🌓 Dark Mode Support */
+.dark-mode .skill-item {
+  background-color: #1e1e1e;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}

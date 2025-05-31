@@ -1,5 +1,6 @@
 import React from 'react';
-import './Skills.css'; // for styling
+import './Skills.css';
+import { motion } from 'framer-motion'; // ✅ Import motion
 
 const Skills = () => {
   const skillList = [
@@ -19,7 +20,16 @@ const Skills = () => {
         <h2>My Skills</h2>
         <ul className="skill-list">
           {skillList.map((skill, index) => (
-            <li key={index} className="skill-item">{skill}</li>
+            <motion.li
+              key={index}
+              className="skill-item"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              {skill}
+            </motion.li>
           ))}
         </ul>
       </div>

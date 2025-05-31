@@ -25,3 +25,22 @@
   border-radius: 50%;
   margin-top: 20px;
 }
+.home {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+

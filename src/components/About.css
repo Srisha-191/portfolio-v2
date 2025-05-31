@@ -27,3 +27,22 @@
   color: #555;
   margin-bottom: 10px;
 }
+.skills {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.skills-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 1rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+}

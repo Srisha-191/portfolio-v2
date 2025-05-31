@@ -55,3 +55,38 @@ body {
     font-size: 0.95rem;
   }
 }
+/* Base App styles */
+.app {
+  background-color: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Dark mode override */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Ensure child components inherit these colors */
+.dark-mode section,
+.dark-mode nav,
+.dark-mode footer,
+.dark-mode div {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+.app,
+.dark-mode {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.toggle-btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.05);
+  background-color: #666;
+}
+

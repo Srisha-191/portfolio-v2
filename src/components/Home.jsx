@@ -1,17 +1,35 @@
 import React from 'react';
-import './Home.css'; 
+import './Home.css';
+import { motion } from 'framer-motion'; // ✅ Import Framer Motion
 
 const Home = () => {
   return (
     <section id="home" className="home">
-      <div className="home-content">
-        <h1>Hi, I am Srisha 👋</h1>
+      <motion.div
+        className="home-content"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <motion.h1
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Hi, I am Srisha 👋
+        </motion.h1>
+
         <h2>Future Full Stack Web Developer</h2>
-        <p>Welcome to my portfolio! I am passionate about building modern, user-friendly websites and applications.</p>
-      </div>
+        <p>
+          Welcome to my portfolio! I am passionate about building modern,
+          user-friendly websites and applications.
+        </p>
+
+        {/* ✅ Replace this image URL with your real image path */}
+        
+      </motion.div>
     </section>
   );
 };
 
 export default Home;
-<img src="your-image-url.jpg" alt="Profile" className="profile-pic" />

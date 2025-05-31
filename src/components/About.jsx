@@ -1,5 +1,7 @@
 import React from 'react';
 import './About.css'; 
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
+
 const About = () => {
   return (
     <section id="about" className="about">
@@ -16,7 +18,18 @@ const About = () => {
           <li><strong> Interests:</strong> Web Development, UI/UX, Open Source</li>
           <li><strong> Location:</strong> Hosur, India</li>
         </ul>
-      </div>
+        <div className="skills">
+  <h3>Technical Skills</h3>
+  <div className="skills-icons">
+    <div className="skill"><FaHtml5 size={40} color="#e34c26" /><p>HTML5</p></div>
+    <div className="skill"><FaCss3Alt size={40} color="#2965f1" /><p>CSS3</p></div>
+    <div className="skill"><FaJs size={40} color="#f0db4f" /><p>JavaScript</p></div>
+    <div className="skill"><FaReact size={40} color="#61dafb" /><p>React</p></div>
+    <div className="skill"><FaNodeJs size={40} color="#68a063" /><p>Node.js</p></div>
+  </div>
+</div>
+</div>
+
     </section>
   );
 };
